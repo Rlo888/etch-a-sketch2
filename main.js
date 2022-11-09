@@ -11,6 +11,9 @@ container.append(title);
 
 let inputBox = document.createElement("input");
 inputBox.setAttribute("type", "text");
+inputBox.className = "inputBox";
+inputBox.value = "20";
+//inputBox.onchange = createSizeOfBoard(this.value);
 inputBox.placeholder = "Enter a # 2-100";
 inputBox.style.width = "100px";
 inputBox.style.height = "25px";
@@ -31,16 +34,37 @@ document.querySelectorAll("button").forEach((button) => {
   button.style.height = "30px";
 });
 
-let board = document.createElement("div");
-board.className = "board";
-board.style.height = "500px";
-board.style.width = "500px";
-board.style.borderStyle = "solid";
-board.style.borderWidth = "4px";
-board.style.borderColor = "black";
-board.style.display = "grid";
-board.style.gridTemplateColumns = "repeat(16,1fr)";
-board.style.gridTemplateRows = "repeat(16,1fr)";
-container.append(board);
+function createBoard(size) {
+  let board = document.createElement("div");
+  board.className = "board";
+  board.style.height = "500px";
+  board.style.width = "500px";
+  board.style.borderStyle = "solid";
+  board.style.borderWidth = "4px";
+  board.style.borderColor = "black";
+  board.style.display = "grid";
+  board.style.gridTemplateColumns = `repeat(${size},1fr)`;
+  board.style.gridTemplateRows = `repeat(${size},1fr)`;
 
-//for(let i=0;i<16)
+  container.append(board);
+  let amount = size * size;
+  for (let i = 0; i < amount; i++) {
+    let box = document.createElement("div");
+    box.addEventListener("mouseover", function () {
+      this.style.backgroundColor = "black";
+    });
+    box.style.backgroundColor = "blue";
+
+    board.append(box);
+  }
+}
+createBoard(35);
+
+function createSizeOfBoard(input) {
+  if (input >= 2 && input <= 100) {
+    createBoard(input);
+  } else {
+    console.log("error");
+  }
+}
+createSizeOfBoard(input);
