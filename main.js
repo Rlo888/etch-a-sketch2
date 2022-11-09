@@ -9,6 +9,13 @@ let title = document.createElement("h1");
 title.innerText = "Super Sketchy";
 container.append(title);
 
+let inputBox = document.createElement("input");
+inputBox.setAttribute("type", "text");
+inputBox.placeholder = "Enter a # 2-100";
+inputBox.style.width = "100px";
+inputBox.style.height = "25px";
+container.append(inputBox);
+
 let chooseSizeBtn = document.createElement("button");
 chooseSizeBtn.className = "button";
 chooseSizeBtn.innerText = "Choose Size";
