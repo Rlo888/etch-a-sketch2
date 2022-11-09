@@ -38,4 +38,9 @@ board.style.width = "500px";
 board.style.borderStyle = "solid";
 board.style.borderWidth = "4px";
 board.style.borderColor = "black";
+board.style.display = "grid";
+board.style.gridTemplateColumns = "repeat(16,1fr)";
+board.style.gridTemplateRows = "repeat(16,1fr)";
 container.append(board);
+
+//for(let i=0;i<16)
