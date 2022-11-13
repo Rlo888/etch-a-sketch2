@@ -35,6 +35,26 @@ resetBtn.className = "resetBtn";
 resetBtn.innerText = "Reset";
 container.append(resetBtn);
 
+let colorButtonContainer = document.createElement("div");
+colorButtonContainer.style.display = "flex";
+colorButtonContainer.style.justifyContent = "space-between";
+container.append(colorButtonContainer);
+
+let blueButton = document.createElement("button");
+blueButton.className = "colorButton";
+blueButton.innerText = "Blue";
+colorButtonContainer.append(blueButton);
+
+let redButton = document.createElement("button");
+redButton.className = "colorButton";
+redButton.innerText = "Red";
+colorButtonContainer.append(redButton);
+
+let eraserButton = document.createElement("button");
+eraserButton.className = "colorButton";
+eraserButton.innerText = "Eraser";
+colorButtonContainer.append(eraserButton);
+
 document.querySelectorAll("button").forEach((button) => {
   button.style.width = "100px";
   button.style.maxWidth = "100px";
@@ -64,9 +84,7 @@ function createBoard(size) {
     for (let i = 0; i < amount; i++) {
       let box = document.createElement("div");
       box.className = "boxes";
-      box.addEventListener("mouseover", function () {
-        this.style.backgroundColor = "black";
-      });
+      box.addEventListener("mouseover", addColor);
       box.style.backgroundColor = "white";
       board.append(box);
     }
@@ -74,6 +92,10 @@ function createBoard(size) {
 }
 function clearBoard() {
   document.getElementById("board")?.remove();
+}
+
+function addColor() {
+  this.style.backgroundColor = "black";
 }
 
 chooseSizeBtn.addEventListener("click", () => {
@@ -84,3 +106,4 @@ chooseSizeBtn.addEventListener("click", () => {
 });
 
 resetBtn.addEventListener("click", clearBoard);
+//redButton.addEventListener("click",
