@@ -40,15 +40,15 @@ colorButtonContainer.style.display = "flex";
 colorButtonContainer.style.justifyContent = "space-between";
 container.append(colorButtonContainer);
 
-let blueButton = document.createElement("button");
-blueButton.className = "colorButton";
-blueButton.innerText = "Blue";
-colorButtonContainer.append(blueButton);
+// let blueButton = document.createElement("button");
+// blueButton.className = "colorButton";
+// blueButton.innerText = "Blue";
+// colorButtonContainer.append(blueButton);
 
-let redButton = document.createElement("button");
-redButton.className = "colorButton";
-redButton.innerText = "Red";
-colorButtonContainer.append(redButton);
+// let redButton = document.createElement("button");
+// redButton.className = "colorButton";
+// redButton.innerText = "Red";
+// colorButtonContainer.append(redButton);
 
 let eraserButton = document.createElement("button");
 eraserButton.className = "colorButton";
@@ -62,6 +62,9 @@ document.querySelectorAll("button").forEach((button) => {
 });
 
 // @ts-ignore
+function userPrompt() {
+  prompt("Please enter a number between 2 and 100");
+}
 
 function createBoard(size) {
   let board = document.createElement("div");
@@ -93,10 +96,10 @@ function createBoard(size) {
 function clearBoard() {
   document.getElementById("board")?.remove();
 }
-
-function addColor() {
-  this.style.backgroundColor = "black";
-}
+// userPrompt();
+// function addColor() {
+//   this.style.backgroundColor = "black";
+// }
 
 chooseSizeBtn.addEventListener("click", () => {
   const btn = document.getElementById("inputBox");
@@ -106,4 +109,3 @@ chooseSizeBtn.addEventListener("click", () => {
 });
 
 resetBtn.addEventListener("click", clearBoard);
-//redButton.addEventListener("click",
