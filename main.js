@@ -40,21 +40,6 @@ colorButtonContainer.style.display = "flex";
 colorButtonContainer.style.justifyContent = "space-between";
 container.append(colorButtonContainer);
 
-// let blueButton = document.createElement("button");
-// blueButton.className = "colorButton";
-// blueButton.innerText = "Blue";
-// colorButtonContainer.append(blueButton);
-
-// let redButton = document.createElement("button");
-// redButton.className = "colorButton";
-// redButton.innerText = "Red";
-// colorButtonContainer.append(redButton);
-
-let eraserButton = document.createElement("button");
-eraserButton.className = "colorButton";
-eraserButton.innerText = "Eraser";
-colorButtonContainer.append(eraserButton);
-
 document.querySelectorAll("button").forEach((button) => {
   button.style.width = "100px";
   button.style.maxWidth = "100px";
@@ -96,10 +81,9 @@ function createBoard(size) {
 function clearBoard() {
   document.getElementById("board")?.remove();
 }
-// userPrompt();
-// function addColor() {
-//   this.style.backgroundColor = "black";
-// }
+function addColor() {
+  this.style.backgroundColor = "black";
+}
 
 chooseSizeBtn.addEventListener("click", () => {
   const btn = document.getElementById("inputBox");
