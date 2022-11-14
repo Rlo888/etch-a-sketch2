@@ -47,9 +47,9 @@ document.querySelectorAll("button").forEach((button) => {
 });
 
 // @ts-ignore
-function userPrompt() {
-  prompt("Please enter a number between 2 and 100");
-}
+// function userPrompt() {
+//   prompt("Please enter a number between 2 and 100");
+// }
 
 function createBoard(size) {
   let board = document.createElement("div");
